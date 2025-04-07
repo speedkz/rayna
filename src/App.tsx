@@ -17,6 +17,9 @@ import DatePickerDemo from '@pages/DatePickerDemo';
 import DropdownDemo from '@pages/DropdownDemo';
 import HeaderDemo from '@pages/HeaderDemo';
 import SidebarDemo from '@pages/SidebarDemo';
+import TableHeaderDemo from '@pages/TableHeaderDemo';
+import TableCellDemo from '@pages/TableCellDemo';
+import TableDemo from '@pages/TableDemo';
 import ToastProvider from '@components/ToastProvider';
 
 const DEMOS = [
@@ -37,6 +40,9 @@ const DEMOS = [
   { path: '/dropdowns', name: 'Dropdowns', component: DropdownDemo },
   { path: '/headers', name: 'Headers', component: HeaderDemo },
   { path: '/sidebars', name: 'Sidebars', component: SidebarDemo },
+  { path: '/table-headers', name: 'Table Headers', component: TableHeaderDemo },
+  { path: '/table-cells', name: 'Table Cells', component: TableCellDemo },
+  { path: '/tables', name: 'Tables', component: TableDemo },
 ];
 
 const App: React.FC = () => {
