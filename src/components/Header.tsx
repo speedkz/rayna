@@ -1,8 +1,6 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
 import { FiChevronDown, FiSearch } from 'react-icons/fi';
-import Image from 'next/image';
-import Link from 'next/link';
 
 export type HeaderVariant = 'one' | 'two' | 'three' | 'four' | 'five' | 'six' | 'seven' | 'eight' | 'nine' | 'ten' | 'eleven';
 
@@ -29,9 +27,9 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'one', className = '' 
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/">
-              <Image src="/images/logo.svg" alt="Logo" width={129} height={32} />
-            </Link>
+            <a href="/">
+              <img src="/images/logo.svg" alt="Logo" className="w-[129px] h-[32px]" />
+            </a>
           </div>
 
           {/* Navigation Links */}
@@ -72,9 +70,9 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'one', className = '' 
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <Link href="/">
-            <Image src="/images/logo.svg" alt="Logo" width={129} height={32} />
-          </Link>
+          <a href="/">
+            <img src="/images/logo.svg" alt="Logo" className="w-[129px] h-[32px]" />
+          </a>
         </div>
 
         {/* Navigation Links */}
@@ -123,9 +121,9 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'one', className = '' 
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <Link href="/">
-            <Image src="/images/logo.svg" alt="Logo" width={129} height={32} />
-          </Link>
+          <a href="/">
+            <img src="/images/logo.svg" alt="Logo" className="w-[129px] h-[32px]" />
+          </a>
         </div>
 
         {/* Navigation Links */}
@@ -169,9 +167,9 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'one', className = '' 
         {/* Left Content */}
         <div className="flex items-center gap-10">
           {/* Logo */}
-          <Link href="/">
-            <Image src="/images/logo.svg" alt="Logo" width={129} height={32} />
-          </Link>
+          <a href="/">
+            <img src="/images/logo.svg" alt="Logo" className="w-[129px] h-[32px]" />
+          </a>
 
           {/* Search */}
           <div className="relative">

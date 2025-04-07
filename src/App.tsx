@@ -16,134 +16,62 @@ import ToastDemo from '@pages/ToastDemo';
 import DatePickerDemo from '@pages/DatePickerDemo';
 import DropdownDemo from '@pages/DropdownDemo';
 import HeaderDemo from '@pages/HeaderDemo';
+import SidebarDemo from '@pages/SidebarDemo';
 import ToastProvider from '@components/ToastProvider';
+
+const DEMOS = [
+  { path: '/', name: 'Buttons', component: ButtonDemo },
+  { path: '/avatars', name: 'Avatars', component: AvatarDemo },
+  { path: '/avatar-groups', name: 'Avatar Groups', component: AvatarGroupDemo },
+  { path: '/badges', name: 'Badges', component: BadgeDemo },
+  { path: '/chips', name: 'Chips', component: ChipDemo },
+  { path: '/inputs', name: 'Inputs', component: InputDemo },
+  { path: '/spinners', name: 'Spinners', component: SpinnerDemo },
+  { path: '/tabs', name: 'Tabs', component: TabsDemo },
+  { path: '/breadcrumbs', name: 'Breadcrumbs', component: BreadcrumbDemo },
+  { path: '/toasts', name: 'Toasts', component: ToastDemo },
+  { path: '/small-file-upload', name: 'Small File Upload', component: FileUploadDemo },
+  { path: '/big-file-upload', name: 'Big File Upload', component: BigFileUploadDemo },
+  { path: '/multi-file-upload', name: 'Multi-File Upload', component: MultiFileUploadDemo },
+  { path: '/date-picker', name: 'Date Picker', component: DatePickerDemo },
+  { path: '/dropdowns', name: 'Dropdowns', component: DropdownDemo },
+  { path: '/headers', name: 'Headers', component: HeaderDemo },
+  { path: '/sidebars', name: 'Sidebars', component: SidebarDemo },
+];
 
 const App: React.FC = () => {
   return (
     <ToastProvider>
       <Router>
-        <nav className="bg-gray-50 py-4 px-6 border-b border-gray-200">
-          <div className="flex items-center gap-6">
-            <Link 
-              to="/" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Button Components
-            </Link>
-            <Link 
-              to="/avatars" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Avatar Components
-            </Link>
-            <Link 
-              to="/avatar-groups" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Avatar Groups
-            </Link>
-            <Link 
-              to="/badges" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Badges
-            </Link>
-            <Link 
-              to="/chips" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Chips
-            </Link>
-            <Link 
-              to="/inputs" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Inputs
-            </Link>
-            <Link 
-              to="/spinners" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Spinners
-            </Link>
-            <Link 
-              to="/tabs" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Tabs
-            </Link>
-            <Link 
-              to="/breadcrumbs" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Breadcrumbs
-            </Link>
-            <Link 
-              to="/toasts" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Toasts
-            </Link>
-            <Link 
-              to="/small-file-upload" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Small File Upload
-            </Link>
-            <Link 
-              to="/big-file-upload" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Big File Upload
-            </Link>
-            <Link 
-              to="/multi-file-upload" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Multi-File Upload
-            </Link>
-            <Link 
-              to="/date-picker" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Date Picker
-            </Link>
-            <Link 
-              to="/dropdowns" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Dropdowns
-            </Link>
-            <Link 
-              to="/headers" 
-              className="text-gray-800 font-inter font-semibold hover:text-[#EB5017] transition-colors duration-200"
-            >
-              Headers
-            </Link>
-            <span className="text-gray-400">|</span>
-            <span className="text-[#EB5017] font-inter font-semibold">
-              Rayna UI Design System
-            </span>
+        <div className="h-screen flex flex-col">
+          <nav className="bg-gray-50 py-4 px-6 border-b border-gray-200 flex-none">
+            <div className="max-w-7xl mx-auto">
+              <div className="flex items-center justify-between">
+                <span className="text-[#EB5017] font-inter font-semibold text-xl">
+                  Rayna UI Design System
+                </span>
+                <div className="flex items-center gap-1 overflow-x-auto">
+                  {DEMOS.map(({ path, name }) => (
+                    <Link
+                      key={path}
+                      to={path}
+                      className="px-4 py-2 text-sm text-gray-800 font-inter font-medium hover:text-[#EB5017] hover:bg-[#FFECE5] rounded-md transition-colors duration-200 whitespace-nowrap"
+                    >
+                      {name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div className="flex-1 flex overflow-hidden">
+            <Routes>
+              {DEMOS.map(({ path, component: Component }) => (
+                <Route key={path} path={path} element={<Component />} />
+              ))}
+            </Routes>
           </div>
-        </nav>
-        <Routes>
-          <Route path="/" element={<ButtonDemo />} />
-          <Route path="/avatars" element={<AvatarDemo />} />
-          <Route path="/avatar-groups" element={<AvatarGroupDemo />} />
-          <Route path="/badges" element={<BadgeDemo />} />
-          <Route path="/chips" element={<ChipDemo />} />
-          <Route path="/inputs" element={<InputDemo />} />
-          <Route path="/spinners" element={<SpinnerDemo />} />
-          <Route path="/tabs" element={<TabsDemo />} />
-          <Route path="/breadcrumbs" element={<BreadcrumbDemo />} />
-          <Route path="/toasts" element={<ToastDemo />} />
-          <Route path="/small-file-upload" element={<FileUploadDemo />} />
-          <Route path="/big-file-upload" element={<BigFileUploadDemo />} />
-          <Route path="/multi-file-upload" element={<MultiFileUploadDemo />} />
-          <Route path="/date-picker" element={<DatePickerDemo />} />
-          <Route path="/dropdowns" element={<DropdownDemo />} />
-          <Route path="/headers" element={<HeaderDemo />} />
-        </Routes>
+        </div>
       </Router>
     </ToastProvider>
   );
